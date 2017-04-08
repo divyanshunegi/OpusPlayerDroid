@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">OpusPlayerDroid</string>
+    <string name="permission_string">Please give storage permission to decode opus file types</string>
+    <string name="runtime_permissions_txt">Please grant the permission to help app do its job, which is playing the simple opus file</string>
 </resources>
