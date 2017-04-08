@@ -23,12 +23,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //OpusService.toggle(this, Environment.getExternalStorageDirectory().getPath()+"/Opus/working_opus_file.opus");
-        OpusLocalService.decode(this,Environment.getExternalStorageDirectory().getPath()+"/Opus/sample_opus_file.opus",Environment.getExternalStorageDirectory().getPath()+"/Opus/wav_file.wav",null);
-//
-//        OpusTool oTool = new OpusTool();
-//        oTool.decode("working_opus_file.opus.opus","my_wav",null);
-
+        //String options = "16000 1 -framesize 960 -forcemono";
+        OpusLocalService.decode(this,Environment.getExternalStorageDirectory().getPath()+"/Opus/working_opus_file.opus",Environment.getExternalStorageDirectory().getPath()+"/Opus/wav_file.wav",null);
 
     }
 
@@ -40,13 +36,11 @@ public class MainActivity extends AppCompatActivity {
         IntentFilter filter = new IntentFilter();
         filter.addAction(OpusEvent.ACTION_OPUS_UI_RECEIVER);
         registerReceiver(mReceiver, filter);
-//        OpusService.toggle(this, Environment.getExternalStorageDirectory().getPath()+"/Opus/working_opus_file.opus");
         super.onResume();
     }
 
     @Override
     protected void onPause() {
-//        OpusService.toggle(this, Environment.getExternalStorageDirectory().getPath()+"/Opus/working_opus_file.opus");
         unregisterReceiver(mReceiver);
         super.onPause();
     }
