@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //String options = "16000 1 -framesize 960 -forcemono";
-        OpusLocalService.decode(this,Environment.getExternalStorageDirectory().getPath()+"/Opus/working_opus_file.opus",Environment.getExternalStorageDirectory().getPath()+"/Opus/wav_file.wav",null);
+        String options = "--rate 16000";
+        OpusLocalService.decode(this,Environment.getExternalStorageDirectory().getPath()+"/Opus/working_opus_file.opus",Environment.getExternalStorageDirectory().getPath()+"/Opus/wav_file.wav",options);
 
     }
 
