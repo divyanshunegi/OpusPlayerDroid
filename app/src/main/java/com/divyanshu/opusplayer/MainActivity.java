@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.divyanshu.opusplayer.opus.OpusLocalService;
 
@@ -53,12 +54,15 @@ public class MainActivity extends AppCompatActivity {
             switch (type) {
                 case OpusEvent.CONVERT_FINISHED:
                     Log.e(TAG,"CONVERT FINISHED");
+                    Toast.makeText(getApplicationContext(), "finished conversion , check Opus folder in sdcard", Toast.LENGTH_SHORT).show();
                     break;
                 case OpusEvent.CONVERT_FAILED:
                     Log.e(TAG,"CONVERT FAILED");
+                    Toast.makeText(getApplicationContext(), "Conversion failed, try opening the app again, or contact developer", Toast.LENGTH_SHORT).show();
                     break;
                 case OpusEvent.CONVERT_STARTED:
                     Log.e(TAG,"CONVERT STARTED");
+                    Toast.makeText(getApplicationContext(), "working opus file decoding started...", Toast.LENGTH_SHORT).show();
                     break;
                 case OpusEvent.RECORD_FAILED:
                     Log.e(TAG,"RECORD FAILED");
